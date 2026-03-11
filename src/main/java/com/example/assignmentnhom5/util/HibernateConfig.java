@@ -1,6 +1,10 @@
 package com.example.assignmentnhom5.util;
 
 
+import com.example.assignmentnhom5.model.Artist;
+import com.example.assignmentnhom5.model.Genre;
+import com.example.assignmentnhom5.model.Song;
+import com.example.assignmentnhom5.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -23,8 +27,10 @@ public class HibernateConfig {
         properties.put(Environment.PASS, "123");
         properties.put(Environment.SHOW_SQL, "true");
 
-        //conf.addAnnotatedClass(Phim.class);
-        //conf.addAnnotatedClass(VeDat.class);
+        conf.addAnnotatedClass(User.class);
+        conf.addAnnotatedClass(Genre.class);
+        conf.addAnnotatedClass(Artist.class);
+        conf.addAnnotatedClass(Song.class);
 
         conf.setProperties(properties);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
